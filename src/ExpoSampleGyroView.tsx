@@ -7,7 +7,9 @@ export type OnGyroEvent = {
 };
 
 export type Props = {
+  onGyroEvent?: (event: { nativeEvent: OnGyroEvent }) => void;
   placeholderText?: string;
+  track: boolean;
 } & ViewProps;
 
 const NativeView: React.ComponentType<Props> =
