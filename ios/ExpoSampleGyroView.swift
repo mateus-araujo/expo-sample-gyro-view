@@ -1,7 +1,16 @@
 import ExpoModulesCore
+import UIKit
 
-// This view will be used as a native component. Make sure to inherit from `ExpoView`
-// to apply the proper styling (e.g. border radius and shadows).
 class ExpoSampleGyroView: ExpoView {
-  
+    let gyroView = GyroView()
+    
+    required init(appContext: AppContext? = nil) {
+        super.init(appContext: appContext)
+        clipsToBounds = true
+        addSubview(gyroView)
+    }
+    
+    override func layoutSubviews() {
+        gyroView.frame = bounds
+    }
 }
